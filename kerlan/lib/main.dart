@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'addRecipePage.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'navbar.dart';
+import 'listView.dart';
+import 'recipe.dart';
+import 'recipeScreen.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Add this
+
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -49,6 +57,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  _MyHomePageState() {}
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -58,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: AddRecipePage(),
+      body: NavBar(),
     );
   }
 }
