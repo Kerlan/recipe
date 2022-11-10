@@ -1,0 +1,4 @@
+#Thu Nov 10 21:22:32 CET 2022
+base.0=/Users/Kerlan/Documents/epitech_2022/FlutterRecipes/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
