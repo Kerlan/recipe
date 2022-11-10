@@ -6,7 +6,7 @@ import 'package:kerlan/recipe.dart';
 import 'addRecipePage.dart';
 
 class RecipeList extends StatefulWidget {
-  const RecipeList({Key? key, required this.title}) : super(key: key);
+  const RecipeList({Key? key}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
