@@ -17,12 +17,13 @@ class RecipeScreen extends StatelessWidget {
         height: 240,
         child: const Center(child: CircularProgressIndicator()),
       ),
-      FadeInImage.memoryNetwork(
-          placeholder: kTransparentImage,
-          image: recipe.imageUrl,
-          width: 600,
-          height: 240,
-          fit: BoxFit.cover)
+      Center(
+          child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: recipe.imageUrl,
+              // width: 600,
+              height: 240,
+              fit: BoxFit.cover))
     ]);
 
     Widget buttonSection = Container(

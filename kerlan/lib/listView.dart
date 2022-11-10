@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'recipeScreen.dart';
+import 'package:kerlan/recipe.dart';
+import 'addRecipePage.dart';
 
 class RecipeList extends StatefulWidget {
   const RecipeList({Key? key, required this.title}) : super(key: key);
@@ -92,6 +95,18 @@ class _RecipeListState extends State<RecipeList> {
         // Here we take the value from the RecipeList object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddRecipePage(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.add, color: Colors.white))
+        ],
       ),
       body: Center(
         child: ListView.builder(
@@ -102,13 +117,31 @@ class _RecipeListState extends State<RecipeList> {
               return Container(
                 child: Column(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      width: 600,
-                      height: 240,
-                      child: Center(
-                        child: Image.network(jsonList[index]["pictures"][0]),
+                    InkWell(
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        width: 600,
+                        height: 240,
+                        child: Center(
+                          child: Image.network(jsonList[index]["pictures"][0]),
+                        ),
                       ),
+                      onTap: () {
+                        print(jsonList[index]);
+                        Recipe data = Recipe(
+                            jsonList[index]["name"],
+                            jsonList[index]["author"],
+                            jsonList[index]["pictures"][0],
+                            jsonList[index]["ingredients"][0],
+                            true,
+                            2);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecipeScreen(recipe: data),
+                          ),
+                        );
+                      },
                     ),
                     Container(
                       child: Center(child: Text(jsonList[index]["name"])),
