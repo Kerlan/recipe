@@ -1,8 +1,0 @@
-version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
-options: "79aef02e90101e4374d32f07dca42413333317180c201b33b648567cfb3a4aac"
-build_start_time: [1668111647, 805847167]
-build_end_time: [1668111658, 898250102]
-inputs:
-  "/Users/Kerlan/Documents/epitech_2022/FlutterRecipes/macos/Flutter/GeneratedPluginRegistrant.swift": [1668111644, 68982362]
-  "/Users/Kerlan/Documents/epitech_2022/FlutterRecipes/macos/Runner/AppDelegate.swift": [1666945493, 225258827]
-  "/Users/Kerlan/Documents/epitech_2022/FlutterRecipes/macos/Runner/MainFlutterWindow.swift": [1666945493, 231187582]

@@ -1,0 +1,42 @@
+name: flutterRecipes
+description: A recipe app built with Flutter.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  image_picker: ^0.8.6
+  page_transition: ^2.0.9
+  http: ^0.13.0
+  dio: ^4.0.6
+  firebase_core: ^2.2.0
+  firebase_storage: ^11.0.5
+  cloud_firestore_platform_interface: ^5.5.1
+  path_provider: ^2.0.8
+  firebase_core_platform_interface: ^4.5.1
+  currency_text_input_formatter: ^2.1.5
+  transparent_image: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  blackfoot_flutter_lint: ^1.0.6
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/RECETTE.jpg
+    - assets/recipe.png
