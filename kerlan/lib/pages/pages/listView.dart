@@ -1,14 +1,12 @@
-import 'dart:convert';
-
-import 'recipe.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
-import 'addRecipePage.dart';
+import 'dart:convert';
 import 'recipeScreen.dart';
+import 'recipe.dart';
+import 'addRecipePage.dart';
 
 class RecipeList extends StatefulWidget {
-  const RecipeList({Key? key, required this.title}) : super(key: key);
+  const RecipeList({Key? key}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -19,7 +17,7 @@ class RecipeList extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
+  final String title = "Mes recettes";
 
   @override
   State<RecipeList> createState() => _RecipeListState();

@@ -12,7 +12,7 @@ class Dashboard extends StatefulWidget {
 class DashboardPageState extends State<Dashboard> {
   int _selectedPage = 0;
   static const List<Widget> _navigationPages = <Widget>[
-    RecipeList(title: "Recettes"),
+    RecipeList(),
     Text("data"),
     Profil(),
   ];
@@ -40,8 +40,6 @@ class DashboardPageState extends State<Dashboard> {
           currentIndex: _selectedPage,
           onTap: _onNavigationTap,
         ),
-        
-        
       ),
     );
   }

@@ -1,14 +1,11 @@
-import 'dart:async';
-import 'dart:io';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
+import 'dart:io';
+import 'dart:async';
 import 'package:image_picker/image_picker.dart';
-import 'package:kerlan/pages/pages/dashboard.dart';
-
+import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 import '../../api/firebase_take_file.dart';
+import 'package:flutter/services.dart';
 import 'listView.dart';
 
 class AddRecipePage extends StatefulWidget {
@@ -61,10 +58,13 @@ class _AddRecipePageState extends State<AddRecipePage> {
       }
       List<FirebaseFile> futureFiles =
           await FirebaseApi.listAll("recipe/photo/" + nomValue + "/");
+      print("EEEEENNNNVUL2");
       for (int i = 0; futureFiles.length != i; i++) {
         print("salllope");
         photoName.add(futureFiles[i].url);
       }
+      print("dkqnkjdnsjkdnsqkjdnqjkdsn");
+
       //"gs://yomy-cfc3f.appspot.com/recipe/photo/" + nomValue + ;
       Map dataRecipe = {
         'name': nomValue,
@@ -84,7 +84,7 @@ class _AddRecipePageState extends State<AddRecipePage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => Dashboard(),
+          builder: (context) => RecipeList(),
         ),
       );
       // var url =
@@ -175,7 +175,9 @@ class _AddRecipePageState extends State<AddRecipePage> {
                         onPressed: () {
                           chooseImage(ImageSource.camera);
                         },
-                        //color: Color.fromARGB(255, 76, 159, 227),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 76, 159, 227),
+                        ),
                         child: Text(
                           "Caméra",
                           style: TextStyle(color: Colors.white),
@@ -188,7 +190,9 @@ class _AddRecipePageState extends State<AddRecipePage> {
                         onPressed: () {
                           chooseImage(ImageSource.gallery);
                         },
-                        //color: Color.fromARGB(255, 76, 159, 227),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 76, 159, 227),
+                        ),
                         child: Text(
                           "Galerie*",
                           style: TextStyle(color: Colors.white),
@@ -326,7 +330,9 @@ class _AddRecipePageState extends State<AddRecipePage> {
                     // }
                     //chooseImage(ImageSource.gallery);
                   },
-                  //color: Color.fromARGB(255, 76, 159, 227),
+                  style: TextButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 76, 159, 227),
+                  ),
                   child: Text(
                     "Ajouter",
                     style: TextStyle(color: Colors.white),

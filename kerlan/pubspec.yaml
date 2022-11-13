@@ -35,13 +35,14 @@ dependencies:
   page_transition: ^2.0.9
   http: ^0.13.0
   dio: ^4.0.6
-  firebase_core: ^2.2.0
-  firebase_storage: ^11.0.5
+  firebase_core: ^1.13.1
+  firebase_storage: ^10.0.3
   cloud_firestore_platform_interface: ^5.5.1
   path_provider: ^2.0.8
   firebase_core_platform_interface: ^4.5.1
   currency_text_input_formatter: ^2.1.5
   transparent_image: ^2.0.0
+  firebase_messaging: ^13.0.4 # will satisfy your firebase core things that depend on ^4.5.1
 
 dev_dependencies:
   flutter_test:
